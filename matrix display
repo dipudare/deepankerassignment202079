@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+class Math{
+  public:
+      int power(double k,int n = 2){
+          double answer = 1;
+          for(int i=0;i<n;i++){
+              answer *=k; 
+          }
+          return answer;
+      }
+};
+
+int main()
+{
+    Math k1;
+    cout<<"Called power function with single argument\n";
+    cout<<k1.power(3);
+    cout<<"\nCalled power function with two arguments\n";
+    cout<<k1.power(3,4);
+    
+    return 0;
+}
