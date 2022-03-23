@@ -1,0 +1,71 @@
+#include<iostream>
+using namespace std;
+class account {
+    
+    double balance , money;
+    
+    public:
+    
+    account ()
+    {
+        balance = 500;
+        money = 0;
+    }
+    
+    void deposit (double money)
+    {
+        balance = balance + money;
+        cout << "Balance : \n" << balance;
+    }
+    void withdraw (double money)
+    {
+        if (balance>0)
+        {
+        balance = balance-money;
+        cout << "Balance : \n" << balance;
+        }
+        else
+        cout<<"Insufficient balance\n";
+    }
+    
+    void interest ()
+    {
+        balance = balance + (0.05*balance);
+        cout << "Balance : \n" << balance;
+    }
+    
+};
+
+int main()
+{
+    int m, ch; account a;
+    cout << "Enter 1. Deposit \n 2. Withdraw \n";
+    cin >>ch;
+    
+    switch(ch)
+    
+    {
+        
+        case 1: 
+            cout<<"Enter the amount you want to deposit\n";
+            cin >> m;
+            a.deposit(m);
+            break;
+        
+        
+        case 2:
+        
+            cout <<"Enter the amount you want to withdraw \n";
+            cin>>m;
+            a.withdraw(m);
+            break;
+        
+        
+        default :
+        
+            a.interest();
+            break;
+        
+    }
+    return 0;
+}
