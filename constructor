@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+class student
+{
+    int roll_no;
+    string name;
+    int age;
+    public:
+    void getdata();
+    void display();
+    //below is default constructor use//
+    student()
+    {
+        cout<<"defult constructor called"<<endl;
+    }
+    ~student()
+    {
+        cout<<"destrucor called"<<endl;
+    }
+    student (int r,int a,string str)//parameterised constructor called
+    {
+        roll_no=r;
+        age=a;
+        name=str;
+    }
+};
+void student :: getdata()
+{
+    cout<<"Enter your roll_no"<<endl;
+    cin>>roll_no;
+    cout<<"Enter your name"<<endl;
+    cin>>name;
+    cout<<"Enter your age"<<endl;
+    cin>>age;
+}
+void student :: display()
+{
+    cout<<"your name is "<<name<<endl;
+    cout<<"your roll_no is "<<roll_no<<endl;
+    cout<<"your age is "<<age<<endl;
+}
+int main()
+{
+    student s1;
+   s1.getdata();
+    s1.display();
+    student s2(s1);//this is copy constructor
+    s2.display();
+    return 0;
+}
