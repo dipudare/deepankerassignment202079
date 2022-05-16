@@ -1,0 +1,44 @@
+#include<iostream.h>
+class weight {
+  int kg;
+  int gm;
+  public:
+    void getdata ();
+    void putdata ();
+    void sum_weight (weight,weight) ;
+    weight sum_weight (weight) ;
+} ;
+void weight :: getdata() {
+  cout<<"/nKg:";
+  cin>>kg;
+  cout<<"Gm:";
+  cin>>gm;
+}
+ void weight :: putdata () {
+   cout<<kg<<" Kgs. and"<<gm<<" gros.\n";
+ }
+ weight weight :: sum_weight(weight a2) {
+  weight temp;
+  temp.gm = gm + a2.gm;
+  temp.kg=temp.gm/1000;
+  temp.gm=temp.gm%1000;
+  temp.kg+=kg+a2.kgm;
+  return(temp);
+}
+int main () {
+  weight a1,a2 ,a3;
+  cout<<"Enter weight in kg and gm\n";
+  cout<<"\n Enter weight #1" ;
+  a3 = a1.sum_weight (a2);
+  w1.getdata();
+  cout<<" \n Enter weight #2" ;
+  a2.getdata();
+  a3.sum_weight(al,a2);
+  cout<<"/n Weight #1 = ";
+  a1.putdata();
+  cout<<"Weight #2 = ";
+  a2.putdata();
+  cout<<"Total Weight = ";
+  a3.putdata();
+  return 0;
+}
