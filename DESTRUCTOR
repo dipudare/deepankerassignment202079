@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+class circle{
+         double r;
+         public:
+              circle(double radius)
+              {
+                  cout<<"Object created."<<endl;
+                  r = radius;
+              }
+
+              void display()
+              {
+                  cout<<"Area of circle is: "<<(3.14*r*r)<<endl;
+              }
+          
+           ~circle()
+           {
+               cout<<"Object Destroyed."<<endl;
+           }
+
+};
+
+int main()
+{
+    circle c1(20.5);
+    c1.display();
+}
