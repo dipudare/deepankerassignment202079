@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+
+class Constructor_Concept{
+    private:
+        string name;
+        int age;
+
+    public:
+          Constructor_Concept()
+          {
+              cout<<"Default Constructor is called."<<endl;
+          } 
+
+          Constructor_Concept(string n, int a)
+          {
+              name = n;
+              age = a;
+          }
+
+          Constructor_Concept(const Constructor_Concept &obj)
+          {
+              name = obj.name;
+              age = obj.age;
+          }
+
+
+          void display()
+          {
+              cout<<"Object Name: "<<name<<endl;
+              cout<<"Object Age: "<<age<<" Year"<<endl;
+          }
+
+
+};
+
+int main()
+{
+    Constructor_Concept obj1;//constructor without parameter
+    Constructor_Concept obj2("KYOYA",25);//constructor Overloading
+    Constructor_Concept obj3 = obj2;//copy constructor
+
+    obj1.display();
+    obj2.display();
+    obj3.display();
+}
